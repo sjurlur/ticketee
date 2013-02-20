@@ -26,3 +26,7 @@ end
 Then /^I should see "(.*?)"$/ do |arg1|
   page.has_content?(arg1)
 end
+
+Then /^I should not see "(.*?)"$/ do |arg1|
+  page.has_no_content?(arg1)
+end
