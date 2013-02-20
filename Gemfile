@@ -39,6 +39,7 @@ gem 'jquery-rails'
 
 group :test, :development do
 	gem 'rspec-rails', '~> 2.5'
+	gem 'dynamic_form'
 end
 group :test do
 	gem 'cucumber-rails-training-wheels'
