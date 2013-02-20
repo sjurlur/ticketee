@@ -41,8 +41,10 @@ group :test, :development do
 	gem 'rspec-rails', '~> 2.5'
 end
 group :test do
-	gem 'cucumber-rails'
+	gem 'cucumber-rails-training-wheels'
 	gem 'capybara'
 	gem 'database_cleaner'
+	#gem 'factory_girl'
+	gem 'factory_girl_rails', '~> 3.0'
 
 end
