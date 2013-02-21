@@ -1,0 +1,33 @@
+Feature: Viewing tickets
+	In order to view the tickets for a project
+	As a user
+	I want to see them on that project's page
+
+	Background:
+	Given there is a project called "TextMate 2"
+	And that project has a ticket:
+	| title           |  description                |
+	| Make it shiny!  |  Stars and glitters, oh my! |
+	
+	And there is a project called "Internet Explorer"
+	And that project has a ticket:
+	| title                |  description           |
+	| Standards compliance  |  Is no joke!           |
+
+	And I am on the home page
+
+	Scenario: Viewing tickets for a single project
+		When I follow "TextMate 2"
+		Then I should see "Make it shiny!"
+		And I should not see "Standards compliance"
+		When I follow "Make it shiny!"
+		Then I should see "Make it shiny"
+		And I should see "Stars and glitters, oh my!"
+
+		When I follow "Ticketee"
+		And I follow "Internet Explorer"
+		Then I should see "Standards compliance"
+		And I should not see "Make it shiny!"
+		When I follow "Standards compliance"
+		Then I should see "Standards compliance"
+		And I should see "Is no joke!"
